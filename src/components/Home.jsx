@@ -1,14 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 import LaundryImage from '../assets/images/1.png';
 
 const LaundryLanding = () => {
+    const [menuOpen, setMenuOpen] = useState(false);
+
     return (
         <div className="min-h-screen bg-gray-100 flex flex-col items-center p-6">
             {/* Navigation Bar */}
             <nav className="w-full flex justify-between items-center p-4 bg-white shadow-md">
                 <h1 className="text-2xl font-bold text-blue-600">Laundry Popote</h1>
-                <div>
-                    <button className="px-4 py-2 bg-blue-500 text-white rounded-lg mr-2 hover:bg-blue-600">Sign In</button>
+                <div className="lg:hidden">
+                    <button
+                        className="text-gray-600 focus:outline-none"
+                        onClick={() => setMenuOpen(!menuOpen)}
+                    >
+                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div className={`lg:flex ${menuOpen ? "block" : "hidden"} space-x-4`}>
+                    <button className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">Sign In</button>
                     <button className="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600">SignUp</button>
                 </div>
             </nav>

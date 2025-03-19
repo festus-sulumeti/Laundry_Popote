@@ -31,7 +31,7 @@ To set up the project locally:
 
 ## Usage
 1. Start the application:
- ```bash
+ ```bash 
    npm run dev
  ```
 2. Open your browser and navigate to `http://localhost:5173/`.

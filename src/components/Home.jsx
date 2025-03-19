@@ -14,15 +14,23 @@ const LaundryLanding = () => {
                         className="text-gray-600 focus:outline-none"
                         onClick={() => setMenuOpen(!menuOpen)}
                     >
-                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-                        </svg>
+                       {menuOpen ? "✖" : "☰"}
                     </button>
                 </div>
-                <div className={`lg:flex ${menuOpen ? "block" : "hidden"} space-x-4`}>
+
+                <div
+                    className={`${
+                        menuOpen
+                        ? "flex flex-col items-center absolute top-16 left-0 w-full bg-white py-6 shadow-md"
+                        : "hidden"
+                    } md:flex md:flex-row md:space-x-6 md:static md:w-auto`}
+                    >
+                   
                     <button className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">Sign In</button>
+                    <br />
                     <button className="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600">SignUp</button>
                 </div>
+               
             </nav>
             
             {/* Main Content Section */}

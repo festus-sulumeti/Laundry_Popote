@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom'; // Added import for navigation
 import LaundryImage from '../assets/images/1.png';
 
 const LaundryLanding = () => {
     const [menuOpen, setMenuOpen] = useState(false);
+    const navigate = useNavigate(); // Initialize navigation
 
     return (
         <div className="min-h-screen bg-gray-100 flex flex-col items-center p-6">
@@ -26,7 +28,12 @@ const LaundryLanding = () => {
                     } md:flex md:flex-row md:space-x-6 md:static md:w-auto`}
                     >
                    
-                    <button className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">Sign In</button>
+                    <button
+                        className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600"
+                        onClick={() => navigate('/login')} // Navigate to sign-in page
+                    >
+                        Sign In
+                    </button>
                     <br />
                     <button className="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600">SignUp</button>
                 </div>

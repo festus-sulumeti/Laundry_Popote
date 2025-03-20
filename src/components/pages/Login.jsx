@@ -38,6 +38,11 @@ const Login = () => {
                             placeholder="Enter your password"
                             required
                         />
+                        <div className="text-right mt-1">
+                            <a href="/forgot-password" className="text-blue-500 hover:underline text-sm">
+                                Forgot Password?
+                            </a>
+                        </div>
                     </div>
                     <button
                         type="submit"

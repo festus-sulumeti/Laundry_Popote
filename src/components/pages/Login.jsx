@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const navigate = useNavigate();
 
     const handleLogin = (e) => {
         e.preventDefault();
@@ -53,9 +55,7 @@ const Login = () => {
                 </form>
                 <p className="text-center text-gray-600 mt-4">
                     Don't have an account?{' '}
-                    <a href="/signup" className="text-blue-500 hover:underline">
-                        Sign Up
-                    </a>
+                    <button className="text-blue-500 hover:underline" onClick={() => navigate('/signup')}>Sign Up</button>
                 </p>
             </div>
         </div>

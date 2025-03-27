@@ -41,9 +41,7 @@ const Login = () => {
                             required
                         />
                         <div className="text-right mt-1">
-                            <a href="/forgot-password" className="text-blue-500 hover:underline text-sm">
-                                Forgot Password?
-                            </a>
+                            <button className="text-blue-500 hover:underline" onClick={() => navigate('/forgot-password')}> Forgot Password?</button>
                         </div>
                     </div>
                     <button
